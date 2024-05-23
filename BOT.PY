@@ -24,17 +24,9 @@ async def add(ctx, left: int, right: int):
     result = left + right
     await ctx.send(result)
 
+
 @bot.command()
-async def coin(ctx):    
-     await ctx.send(yazi_tura)
+async def joined(ctx, member: discord.Member):
+    await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
 
-
-def yazi_tura():
-    para = random.randint(0, 2)
-    if para == 0:
-        return "YAZI"
-    else:
-        return "TURA"
-    
-    
 bot.run("TOKEN")
